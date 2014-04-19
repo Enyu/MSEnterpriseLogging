@@ -1,5 +1,9 @@
-﻿using System.Configuration;
+﻿using System;
+using System.Configuration;
+using System.IO;
 using System.Linq;
+using System.Reflection.Emit;
+using System.Text;
 
 namespace DPE.LogLibrary.Tests.TestHelper
 {
@@ -24,6 +28,34 @@ namespace DPE.LogLibrary.Tests.TestHelper
             config.AppSettings.Settings.Remove(newKey);
             config.Save(ConfigurationSaveMode.Modified);
             ConfigurationManager.RefreshSection("appSettings");
-        } 
+        }
+
+        public static string ReadFile(string path)
+        {
+            if (!File.Exists(path))
+            {
+                return null;
+            }
+
+            var sb = new StringBuilder();
+            using (var sr = new StreamReader(path))
+            {
+                String line;
+                while ((line = sr.ReadLine()) != null)
+                {
+                    sb.AppendLine(line);
+                }
+            }
+            return sb.ToString();
+        }
+
+        public static void RemoveFile(string path)
+        {
+            if (File.Exists(path))
+            {
+                File.Delete(path);
+            }
+        }
+
     }
 }

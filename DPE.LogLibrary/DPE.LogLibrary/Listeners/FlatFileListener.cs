@@ -12,8 +12,8 @@ namespace DPE.LogLibrary.Listeners
     public class FlatFileListener : RollingFlatFileTraceListener
     {
         public FlatFileListener(string fileName,
-            string header = "",
-            string footer = "",
+            string header = "-----------------------",
+            string footer = "-----------------------",
             ILogFormatter formatter = null,
             int rollSizeKb = 20000,
             string timeStampPattern = "yyyy-MM-dd hh:mm:ss",

@@ -18,12 +18,11 @@ namespace DPE.LogLibrary.Formatters
         public string Format(LogEntry log)
         {
             var xmlBody = new StringBuilder()
-                .AppendLine("<AppLog>")
                 .AppendFormat("<Message>{0}</Message>", log.Message).AppendLine()
-                .AppendFormat("<ControllerName>{0}</ControllerName>", log.ExtendedProperties["controllerName"]).AppendLine()
+                .AppendFormat("<ControllerName>{0}</ControllerName>", log.ExtendedProperties["controllerName"])
+                .AppendLine()
                 .AppendFormat("<ActionName>{0}</ActionName>", log.ExtendedProperties["actionName"]).AppendLine()
-                .AppendFormat("<category>{0}</category>", log.Categories.First())
-                .AppendLine("</AppLog>");
+                .AppendFormat("<category>{0}</category>", log.Categories.First());
 
             return xmlBody.ToString();
         }
