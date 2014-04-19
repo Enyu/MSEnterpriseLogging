@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30110.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DPE.LogLibrary", "DPE.LogLibrary\DPE.LogLibrary.csproj", "{9ADE4078-1C6D-4C3E-88AB-B2A376703CBB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DPE.LogLibrary.Tests", "DPE.LogLibrary.Tests\DPE.LogLibrary.Tests.csproj", "{6F390816-1102-4BD5-943E-C63CF35C2754}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9ADE4078-1C6D-4C3E-88AB-B2A376703CBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9ADE4078-1C6D-4C3E-88AB-B2A376703CBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9ADE4078-1C6D-4C3E-88AB-B2A376703CBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9ADE4078-1C6D-4C3E-88AB-B2A376703CBB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F390816-1102-4BD5-943E-C63CF35C2754}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F390816-1102-4BD5-943E-C63CF35C2754}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F390816-1102-4BD5-943E-C63CF35C2754}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F390816-1102-4BD5-943E-C63CF35C2754}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPathV6 = packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.Logging.6.0.1304.0\lib\NET45
+	EndGlobalSection
+EndGlobal
