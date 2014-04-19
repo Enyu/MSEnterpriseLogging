@@ -1,5 +1,4 @@
-﻿using System;
-using System.Configuration;
+﻿using System.Configuration;
 using System.IO;
 using Microsoft.Practices.EnterpriseLibrary.Common.Configuration;
 using Microsoft.Practices.EnterpriseLibrary.Logging.Configuration;
@@ -12,8 +11,8 @@ namespace DPE.LogLibrary.Listeners
     public class FlatFileListener : RollingFlatFileTraceListener
     {
         public FlatFileListener(string fileName,
-            string header = "-----------------------",
-            string footer = "-----------------------",
+            string header = "----------------------------------",
+            string footer = "----------------------------------",
             ILogFormatter formatter = null,
             int rollSizeKb = 20000,
             string timeStampPattern = "yyyy-MM-dd hh:mm:ss",
@@ -21,7 +20,7 @@ namespace DPE.LogLibrary.Listeners
             RollInterval rollInterval = RollInterval.Day,
             int maxArchivedFiles = 0) :
                 base(
-                Path.Combine(ResolveLogPath(), fileName), header, footer, new XmlLogFormatter(), rollSizeKb, timeStampPattern,
+                Path.Combine(ResolveLogPath(), fileName), header, footer, formatter, rollSizeKb, timeStampPattern,
                 rollFileExistsBehavior, rollInterval, maxArchivedFiles)
         {
         }

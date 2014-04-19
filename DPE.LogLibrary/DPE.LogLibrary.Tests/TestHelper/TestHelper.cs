@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Configuration;
 using System.IO;
 using System.Linq;
@@ -57,5 +58,20 @@ namespace DPE.LogLibrary.Tests.TestHelper
             }
         }
 
+       public static string GenerateExpectedResult(string message, Dictionary<string, object> dict)
+       {
+           const string header = "----------------------------------";
+           const string footer = "----------------------------------";
+
+           var expectedResult = new StringBuilder();
+           expectedResult.AppendLine(header);
+           foreach (var property in dict)
+           {
+               expectedResult.AppendLine(string.Format("{0} : {1}", property.Key, property.Value));
+           }
+           expectedResult.AppendFormat("Message : {0}\r\n", message);
+           expectedResult.AppendLine(footer);
+           return expectedResult.ToString();
+       }
     }
 }

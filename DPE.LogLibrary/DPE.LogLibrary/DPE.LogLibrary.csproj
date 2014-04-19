@@ -48,7 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Formatters\XMLLogFormatter.cs" />
+    <Compile Include="Formatters\TxtFormatter.cs" />
     <Compile Include="Listeners\FlatFileListener.cs" />
     <Compile Include="MagicLogger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
