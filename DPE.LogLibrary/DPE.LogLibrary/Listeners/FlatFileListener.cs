@@ -28,14 +28,13 @@ namespace DPE.LogLibrary.Listeners
 
         private static string ResolveLogPath()
         {
-            try
+            var logPath = ConfigurationManager.AppSettings["logPath"];
+            if (!string.IsNullOrEmpty(logPath))
             {
-                return ConfigurationManager.AppSettings["logPath"];
+                return logPath;
             }
-            catch (Exception exception)
-            {
-                throw new ConfigurationErrorsException("Please add log path root in your config file first.", exception);
-            }
+            throw new ConfigurationErrorsException("Please add log path root in your config file first.");
         }
+        
     }
 }
